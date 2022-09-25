@@ -50,7 +50,12 @@ class _LoginPageState extends State<LoginPage> {
       });
     }
   }
-
+@override
+  void initState() {
+    // TODO: implement initState
+  loginUser();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

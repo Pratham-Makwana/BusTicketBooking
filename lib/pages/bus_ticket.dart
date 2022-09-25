@@ -156,9 +156,12 @@ class _AddState extends State<Add> {
                             ),
                             TextFormField(
                               controller: age,
+                              keyboardType: TextInputType.number,
+                              maxLength: 3,
                               decoration: InputDecoration(
                                   fillColor: Colors.grey.shade100,
                                   filled: true,
+                                  counterText: "",
                                   hintText: "Enter Your Age(In Yrs)",
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10)),
@@ -176,8 +179,11 @@ class _AddState extends State<Add> {
                             ),
                             TextFormField(
                               controller: number,
+                              keyboardType: TextInputType.phone,
+                              maxLength: 10,
                               decoration: InputDecoration(
                                   fillColor: Colors.grey.shade100,
+                                  counterText: "",
                                   filled: true,
                                   hintText: "Enter Your Mobile Number",
                                   border: OutlineInputBorder(
@@ -445,7 +451,7 @@ class _AddState extends State<Add> {
                                   var date =  await showDatePicker(
                                       context: context,
                                       initialDate: DateTime.now(),
-                                      firstDate:DateTime(1900),
+                                      firstDate:DateTime.now(),
                                       lastDate: DateTime(2100));
                                   dateofJourney.text = date.toString().substring(0,10);
                                 },),

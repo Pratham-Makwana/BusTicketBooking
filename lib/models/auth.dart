@@ -3,14 +3,15 @@ import 'package:bus_ticket_booking_app/pages/homepage.dart';
 import 'package:bus_ticket_booking_app/pages/loginpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
 // creating firebase instance
+/*
 final FirebaseAuth auth = FirebaseAuth.instance;
 
 Future<void> signup(BuildContext context) async {
@@ -37,6 +38,7 @@ Future<void> signup(BuildContext context) async {
   // for go to the HomePage screen
 }
 //}
+*/
 
 
 
@@ -46,9 +48,15 @@ Future<void> signup(BuildContext context) async {
 
 class AuthController extends GetxController
 {
-  signUp(String email,String password) async {
+  signUp(String name,String email,String password) async {
     try{
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password).then((value) {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password).then((value) async {
+
+        await FirebaseFirestore.instance.collection('user').add({
+          "name":name,
+          "email":email,
+          "password":password
+        });
         // print("Done");
         Get.snackbar("Sign Up", "Sign Up successfully",snackPosition: SnackPosition.BOTTOM);
         Get.offAll( LoginPage());

@@ -28,7 +28,7 @@ class _SignupPageState extends State<SignupPage> {
         changebutton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await  authController.signUp(username.text, password.text);
+      await  authController.signUp(name.text,username.text, password.text);
       // Navigator.push(
       //context, MaterialPageRoute(builder: (context) => LoginPage()),);
       setState(() {
