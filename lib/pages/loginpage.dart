@@ -52,8 +52,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 @override
   void initState() {
+    loginUser();
     // TODO: implement initState
-  loginUser();
     super.initState();
   }
 
