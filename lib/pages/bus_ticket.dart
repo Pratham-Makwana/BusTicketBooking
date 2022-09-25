@@ -69,11 +69,13 @@ class _AddState extends State<Add> {
   ];
   String? selectedclass;
   final List<String> _locations =[
-    'AC Chair Class',
-    'First Class',
-    'Second Class',
-    'Undeserved/Genral Class',
-    'Sleeper class'
+    'AC Sleeper(2+2)',
+    'AC Seater(3+2)',
+    'Non AC Sleeper',
+    'Non AC Sleeper(2+2)',
+    'Volvo Multi-Axle A/C Semi Sleeper',
+    'Single Deck',
+    'Double Deck'
   ];
   String? onclick;
   bool seepwd = false;
