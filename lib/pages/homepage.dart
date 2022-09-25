@@ -119,9 +119,9 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     children: [
-                                      const Text("Class :",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                      const Text("Name :",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                                       const SizedBox(width: 5,),
-                                      Text(data['class'],style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                      Text(data['name'],style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                                     ],
                                   ),
                                 ),
@@ -130,26 +130,41 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     children: [
-                                      const Text("Gender :",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                      const Text("Bus Type :",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                                       const SizedBox(width: 5,),
-                                      Text(data['gender'],style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                      Text(data['bustype'],style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                                     ],
                                   ),
                                 ),
                                 const SizedBox(height: 5,),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(data['name']),
+                                  child: Row(
+                                    children: [
+                                      const Text("Gender : ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                                      Text(data['gender'],style: const  TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                    ],
+                                  ),
                                 ),
                                 const SizedBox(height: 5,),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(data['mobileno']),
+                                  child: Row(
+                                    children: [
+                                      const Text("Mobile no : ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                                      Text(data['mobileno'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                    ],
+                                  ),
                                 ),
                                 const SizedBox(height: 5,),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(data['age']),
+                                  child: Row(
+                                    children: [
+                                      const Text("Age : ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                                      Text(data['age'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                    ],
+                                  ),
                                 ),
                                 const SizedBox(height: 5,),
                                 Stack(
@@ -181,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                                                   mobileNo:data['mobileno'] ,
                                                   fromcity:data['fromcity'] ,
                                                   tocity: data['tocity'],
-                                                  trainClass: data['class'],
+                                                  bustype: data['bustype'],
                                                   date: data['date'],
                                                 )));
                                               },

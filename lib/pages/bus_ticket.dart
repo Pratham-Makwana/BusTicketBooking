@@ -17,7 +17,7 @@ class Add extends StatefulWidget {
     this.date,
     this.fromcity,
     this.tocity,
-    this.trainClass,
+    this.bustype,
   }) : super(key: key);
 
   final String? id;
@@ -28,7 +28,7 @@ class Add extends StatefulWidget {
   final String? date;
   final String? fromcity;
   final String? tocity;
-  final String? trainClass;
+  final String? bustype;
 
   @override
   State<Add> createState() => _AddState();
@@ -67,7 +67,7 @@ class _AddState extends State<Add> {
     'Mumbai',
     'Jaipur',
   ];
-  String? selectedclass;
+  String? selectedbustype;
   final List<String> _locations =[
     'AC Sleeper(2+2)',
     'AC Seater(3+2)',
@@ -101,7 +101,7 @@ class _AddState extends State<Add> {
     widget.id!=null?age.text=widget.age.toString():"";
     widget.id!=null?number.text=widget.mobileNo.toString():"";
     widget.id!=null?selectedGender=widget.gender.toString():"";
-    widget.id!=null?selectedclass=widget.trainClass.toString():"";
+    widget.id!=null?selectedbustype=widget.bustype.toString():"";
     widget.id!=null?selectedFromCity=widget.fromcity.toString():"";
     widget.id!=null?selectedToCity=widget.tocity.toString():"";
     widget.id!=null?dateofJourney.text=widget.date.toString():"";
@@ -380,7 +380,7 @@ class _AddState extends State<Add> {
                                 ),
                                 isExpanded: true,
                                 hint: const Text(
-                                  'Select Class',
+                                  'Select Bus Type',
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 icon: const Icon(
@@ -393,10 +393,10 @@ class _AddState extends State<Add> {
                                 dropdownDecoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                value: selectedclass,
+                                value: selectedbustype,
                                 onChanged: (newvalue) {
                                   setState(() {
-                                    selectedclass = newvalue.toString();
+                                    selectedbustype = newvalue.toString();
                                   });
                                 },
                                 items: _locations
@@ -495,7 +495,7 @@ class _AddState extends State<Add> {
             'gender': selectedGender,
             'fromcity': selectedFromCity,
             'tocity': selectedToCity,
-            'class': selectedclass,
+            'bustype': selectedbustype,
             'date': dateofJourney.text,
             'userId':userId,
           }).whenComplete(() {
@@ -510,7 +510,7 @@ class _AddState extends State<Add> {
             'gender':selectedGender,
             'fromcity': selectedFromCity,
             'tocity': selectedToCity,
-            'class': selectedclass,
+            'bustype': selectedbustype,
             'date': dateofJourney.text,
             'userId':userId
           }).whenComplete((){
